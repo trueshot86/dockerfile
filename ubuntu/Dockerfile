@@ -23,7 +23,8 @@ RUN apt-get update && \
     net-tools \
     build-essential
 
-RUN echo '[ssh_connection] \
+RUN mkdir /etc/ansible &&\
+    echo '[ssh_connection] \
 ssh_args = -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null' > /etc/ansible/ansible.cfg
 
 RUN echo 'curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
