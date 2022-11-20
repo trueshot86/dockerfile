@@ -1,4 +1,4 @@
-FROM ubuntu:jammy
+FROM ubuntu:jammy # jammy is 22.04 LTS
 
 WORKDIR /root
 
