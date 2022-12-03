@@ -14,6 +14,7 @@ RUN apt-get update && \
     ansible \
     sshpass \
     python3 \
+    python3-pip \
     python3-distutils \
     wget \
     curl \
@@ -30,6 +31,6 @@ ssh_args = -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=
 RUN echo 'curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
 chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-apt install gh -y' > install_gh.sh && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+apt install gh -y' > install_gh.sh #&& \
+#    apt-get clean && \
+#    rm -rf /var/lib/apt/lists/*
